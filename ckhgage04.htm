@@ -1,0 +1,235 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Auto-adjust</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      body {
+        text-align: center;
+      }
+      
+      #g1 {
+         /* width:400px; height:300px; */
+        display: inline-block;
+        margin: 1em;
+      }
+      
+       #g2 {
+         /* width:400px; height:300px; */
+        display: inline-block;
+        margin: 1em;
+      }
+       #g3 {
+         /* width:400px; height:300px; */
+        display: inline-block;
+        margin: 1em;
+      }
+
+	   #g4 {
+         /* width:400px; height:300px; */
+        display: inline-block;
+        margin: 1em;
+      }
+      
+      p {
+        display: block;
+        width: 450px;
+        margin: 2em auto;
+        text-align: left;
+      }
+    </style>
+    
+
+    <script src="ckhgage.0.4.min.5.js"></script>
+    <script>
+      var g1, g2, g3, g4;
+      
+      window.onload = function(){
+        var g1 = new CkhGage({
+          id: "g1", 
+          //value: 100, //getRandomInt(0, 100), 
+		  value: getRandomInt(0, 100), 
+          min: 0,
+          max: 100,
+
+          label: "pounds",
+
+			title : "Ckh Temperature",
+
+			line_color : "#3399cc",
+
+			title_font_style :"Arial",
+			title_font_size :  "25",
+			title_font_color :  "#000066",
+
+			fill_gradient_color_start :  '#00ccff',
+			fill_gradient_color_stop :  '#000066',
+
+
+			value_font_style : "Arial",
+			value_font_size :"42",
+			value_font_color : '#000066',
+			value_sign : "",
+
+
+			valuedesc :  "time / sec",
+			valuedesc_font_style : "Arial",
+			valuedesc_font_size : '16',
+			valuedesc_font_color : "#000066",
+
+			minmax_font_style :  "Arial",
+			minmax_font_size : '16',
+			minmax_font_color :  "#000066",
+
+
+			gage_w_radio : 60,
+
+			a:10
+    });
+        
+ 
+
+ var g2 = new CkhGage({
+          id: "g2", 
+          //value: 100, //getRandomInt(0, 100), 
+		  value: getRandomInt(0, 200), 
+          min: 0,
+          max: 200,
+
+          label: "pounds",
+
+			title : "Ckh Vlotage",
+
+			line_color : "#006633",
+
+			gage_w_radio : 30,
+
+			
+
+			title_font_style :"Arial",
+			title_font_size :  "16",
+			title_font_color :  "#003300",
+
+			fill_gradient_color_start :  '#66ff33',
+			fill_gradient_color_stop :  '#003300',
+
+
+			value_font_style : "Arial",
+			value_font_size :"62",
+			value_font_color : '#003300',
+			value_sign : "",
+
+
+			valuedesc :  "time / sec",
+			valuedesc_font_style : "Arial",
+			valuedesc_font_size : '16',
+			valuedesc_font_color : "#003300",
+
+			minmax_font_style :  "Arial",
+			minmax_font_size : '16',
+			minmax_font_color :  "#003300",
+
+			a:10
+    });
+
+
+
+ var g3 = new CkhGage({
+          id: "g3", 
+          //value: 100, //getRandomInt(0, 100), 
+		  value: getRandomInt(0, 200), 
+          min: 0,
+          max: 200,
+
+          label: "pounds",
+
+			title : "Ckh Vlotage",
+
+			line_color : "#006633",
+
+			gage_w_radio : 30,
+
+			
+
+			title_font_style :"Arial",
+			title_font_size :  "16",
+			title_font_color :  "#003300",
+
+			fill_gradient_color_start :  '#66ff33',
+			fill_gradient_color_stop :  '#003300',
+
+
+			value_font_style : "Arial",
+			value_font_size :"62",
+			value_font_color : '#003300',
+			value_sign : "",
+
+
+			valuedesc :  "time / sec",
+			valuedesc_font_style : "Arial",
+			valuedesc_font_size : '16',
+			valuedesc_font_color : "#003300",
+
+			minmax_font_style :  "Arial",
+			minmax_font_size : '16',
+			minmax_font_color :  "#003300",
+
+			a:10
+    });
+
+
+
+
+ var g4 = new CkhGage({
+          id: "g4", 
+          //value: 100,
+		  value: getRandomInt(0, 200), 
+          min: 0,
+          max: 80,
+		  auto : 'True',
+		  title : "Ckh Vlotage",
+		  a:10
+    });
+
+
+
+
+        setInterval(function() 
+		{
+          g1.refresh(getRandomInt(50,100));
+
+		  g2.refresh(getRandomInt(0, 2));  
+
+		  g3.refresh(getRandomInt(9,200));  
+
+		  g4.refresh(getRandomInt(9,80));  
+		  //g1.refresh(100);
+        }, 1000);
+
+      };
+    </script>
+
+	</head>
+  <body>    
+    <div id="g1ss"></div>
+
+
+	<canvas id="g1" width="400" height="300" style="border:1px solid #000000;"></canvas>
+
+	<br>
+
+	<canvas id="g2" width="200" height="200" style="border:1px solid #000000;"></canvas>
+
+	<br>
+
+	<canvas id="g3" width="100" height="100" style="border:1px solid #000000;"></canvas>
+
+<br>
+
+	<canvas id="g4" width="200" height="150" style="border:1px solid #000000;"></canvas>
+
+
+   
+  </body>
+</html>
